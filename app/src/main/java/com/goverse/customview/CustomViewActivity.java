@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -65,26 +66,33 @@ public class CustomViewActivity extends AppCompatActivity {
         EditText etOldNum = findViewById(R.id.et_old);
         EditText etNewNum = findViewById(R.id.et_new);
         findViewById(R.id.layout_anim).setVisibility(View.VISIBLE);
-        AnimNumberView animNumberView = findViewById(R.id.anim_number_view);
-        Editable oldEditable = etOldNum.getText();
-        Editable newEditable = etNewNum.getText();
+        final AnimNumberView animNumberView = findViewById(R.id.anim_number_view);
+        final Editable oldEditable = etOldNum.getText();
+        final Editable newEditable = etNewNum.getText();
+        Button btnAnim = findViewById(R.id.btn_anim);
+        btnAnim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (oldEditable.length() == 0 || newEditable.length() == 0) {
+                    Toast.makeText(CustomViewActivity.this, "请输入数字 ！！！", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-        if (oldEditable.length() == 0 || newEditable.length() == 0) {
-            Toast.makeText(this, "请输入数字 ！！！", Toast.LENGTH_SHORT).show();
-            return;
-        }
+                try {
+                    long oldValue = Long.parseLong(oldEditable.toString());
+                    long newValue = Long.parseLong(newEditable.toString());
+                    NumberFormat numberInstance = NumberFormat.getNumberInstance(Locale.getDefault());
+                    numberInstance.setMaximumFractionDigits(1);
+                    numberInstance.setMinimumFractionDigits(0);
+                    String formatNewValue = numberInstance.format(newValue);
+                    animNumberView.setText(numberInstance.format(oldValue), formatNewValue);
+                } catch (NumberFormatException e) {
+                    Toast.makeText(CustomViewActivity.this, "数字超出范围 ！！！", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
-        try {
-            long oldValue = Long.parseLong(oldEditable.toString());
-            long newValue = Long.parseLong(newEditable.toString());
-            NumberFormat numberInstance = NumberFormat.getNumberInstance(Locale.getDefault());
-            numberInstance.setMaximumFractionDigits(1);
-            numberInstance.setMinimumFractionDigits(0);
-            String formatNewValue = numberInstance.format(newValue);
-            animNumberView.setText(numberInstance.format(oldValue), formatNewValue);
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "数字超出范围 ！！！", Toast.LENGTH_SHORT).show();
-        }
+
     }
 
     private void showCircleChart() {
