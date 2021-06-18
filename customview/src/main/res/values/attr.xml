@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="progressChart">
+        <attr name="spaceWidth" format="dimension"></attr>
+        <attr name="spaceColor" format="color"></attr>
+        <attr name="maxProgress" format="integer"></attr>
+        <attr name="progress" format="integer"></attr>
+        <attr name="subscriptHeight" format="dimension"></attr>
+        <attr name="subscriptVisibility" format="boolean"></attr>
+        <attr name="progrssBarHeight" format="dimension"></attr>
+        <attr name="subscriptTopPadding" format="dimension"></attr>
+        <attr name="subscriptTextSize" format="dimension"></attr>
+        <attr name="progressTextSize" format="dimension"></attr>
+        <attr name="startProgressTextColor" format="color"></attr>
+        <attr name="endProgressTextColor" format="color"></attr>
+        <attr name="progrssBarPaddingLeft" format="dimension"></attr>
+        <attr name="progrssBarPaddingRight" format="dimension"></attr>
+    </declare-styleable>
+
+</resources>
