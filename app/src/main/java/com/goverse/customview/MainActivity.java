@@ -10,6 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.goverse.customview.recyclercard.RecyclerCardActivity;
+import com.goverse.customview.recyclercard.RecyclerCardLayout;
+
 import static com.goverse.customview.CustomViewActivity.ViewType.ANIM_VIEW;
 import static com.goverse.customview.CustomViewActivity.ViewType.CIRCLE_CHART;
 import static com.goverse.customview.CustomViewActivity.ViewType.CLOCK_CHART;
@@ -22,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
 
     private Integer data[] = {CIRCLE_CHART, CLOCK_CHART, PROGRESSBAR_CHART, RADAR_CHART, PICK_VIEW, ANIM_VIEW};
-    private String text[] = {"circle_chart", "clock_chart", "progressbar_chart", "radar_chart", "pick_view", "anim_view"};
+    private String text[] = {"circle_chart", "clock_chart", "progressbar_chart", "radar_chart", "pick_view", "anim_view", "recycler_card"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +38,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Log.d(TAG, "onItemClick:" + i);
-                Intent intent = new Intent(MainActivity.this, CustomViewActivity.class);
-                intent.putExtra("viewType", data[i]);
-                startActivity(intent);
+                if (i < data.length) {
+                    Intent intent = new Intent(MainActivity.this, CustomViewActivity.class);
+                    intent.putExtra("viewType", data[i]);
+                    startActivity(intent);
+                } else {
+                    if (i == data.length) {
+                        Intent intent = new Intent(MainActivity.this, RecyclerCardActivity.class);
+                        startActivity(intent);
+                    }
+                }
             }
         });
     }
