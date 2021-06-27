@@ -4,7 +4,7 @@
 
 #### 1. CircleChart
 
-<img style="width:200px;height:auto" src="https://github.com/Goverse/view-android/blob/master/pic/circlechart.png"  align=center />
+![circlechart](./pic/circlechart.jpeg)
 
 使用方法：
 ```
@@ -19,7 +19,7 @@
 
 #### 2. clockchart
 
-<img style="width:200px;height:auto" src="./pic/clockchart.jpg"  align=center />
+![clockchart](./pic/clockchart.jpg)
 
 使用方法：
 ```
@@ -35,7 +35,7 @@
 
 #### 3. pbchart
 
-<img style="width:200px;height:auto" src="./pic/pbchart.jpg"  align=center />
+![pbchart](./pic/pbchart.jpg)
 
 使用方法：
 ```
@@ -50,7 +50,7 @@
 
 #### 4. radarchart
 
-<img style="width:200px;height:auto" src="./pic/radarchart.jpg"  align=center />
+![radarchart](./pic/radarchart.jpg)
 
 使用方法：
 ```
@@ -71,12 +71,11 @@
  #### 1. PickView
  > 规则的选择View，点击会有动画效果，可以控制选中子View的数量。
 
- <img style="width:200px;height:auto" src="./pic/PickView.gif"  align=center />
+![PickView](./pic/PickView.gif)
 
 
 
  #### 2. AnimView
 > 一个数字切换的动效。
 
-
- <img style="width:200px;height:auto" src="./pic/animView.gif"  align=center />
+![animView](./pic/animView.gif)
