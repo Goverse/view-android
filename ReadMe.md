@@ -4,7 +4,7 @@
 
 #### 1. CircleChart
 
-<img style="width:200px;height:auto" src="./pic/circlechart.png"  align=center />
+<img style="width:200px;height:auto" src="https://github.com/Goverse/view-android/blob/master/pic/circlechart.png"  align=center />
 
 使用方法：
 ```
